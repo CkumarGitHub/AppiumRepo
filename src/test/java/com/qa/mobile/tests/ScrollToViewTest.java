@@ -1,5 +1,7 @@
 package com.qa.mobile.tests;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -7,6 +9,7 @@ import com.qa.mobile.testbase.TestBase;
 
 public class ScrollToViewTest extends TestBase{
 	
+	@BeforeMethod
 	@BeforeClass
 	public void setUp() {
 		initialization();

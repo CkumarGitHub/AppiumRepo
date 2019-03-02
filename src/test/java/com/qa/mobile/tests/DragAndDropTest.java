@@ -1,6 +1,10 @@
 package com.qa.mobile.tests;
 
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import org.apache.commons.lang3.time.StopWatch;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -15,6 +19,7 @@ import static io.appium.java_client.touch.offset.ElementOption.element;
 
 public class DragAndDropTest extends TestBase{
 
+	@BeforeMethod
 	@BeforeClass
 	public void setUp() {
 		initialization();
@@ -35,7 +40,7 @@ public class DragAndDropTest extends TestBase{
 		WebElement destin = driver.findElementsByClassName("android.view.View").get(1);
 		
 		androidtouch.longPress(element(source)).moveTo(element(destin)).release().perform();
-		Assert.assertEquals(driver.findElementsByClassName("android.widget.TextView").get(0).getText(),"Views/Drag and Drop");
+		AssertJUnit.assertEquals(driver.findElementsByClassName("android.widget.TextView").get(0).getText(),"Views/Drag and Drop");
 		
 		pageload.stop();
 		System.out.println(pageload.getTime());
@@ -43,6 +48,7 @@ public class DragAndDropTest extends TestBase{
 		
 	}
 	
+	@AfterMethod
 	@AfterClass
 	public void tearDown() {
 		driver.quit();

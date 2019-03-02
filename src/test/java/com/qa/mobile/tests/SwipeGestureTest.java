@@ -1,5 +1,7 @@
 package com.qa.mobile.tests;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import static io.appium.java_client.touch.offset.ElementOption.element;
 
 import java.time.Duration;
@@ -16,6 +18,7 @@ import io.appium.java_client.touch.TapOptions;
 
 public class SwipeGestureTest extends TestBase{
 	
+	@BeforeMethod
 	@BeforeClass
 	public void setUp() {
 		initialization();

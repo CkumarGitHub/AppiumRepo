@@ -1,5 +1,8 @@
 package com.qa.mobile.tests;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -16,6 +19,7 @@ import java.time.Duration;
 
 public class GesturesTest extends TestBase{
 	
+	@BeforeMethod
 	@BeforeClass
 	public void setUp() {
 		initialization();
